@@ -47,11 +47,11 @@ os.system('clear')
 print("Processing...")
 
 # Calcuations 
-MagneticFlux = MagneticFluxDensity(turns, voltage, resistance, length)
-PointDensity(pointsAcrossXaxis, MagneticFlux, length, OuterRadius)
+magneticFlux = MagneticFluxDensity(turns, voltage, resistance, length)
+PointDensity(pointsAcrossXaxis, magneticFlux, length, OuterRadius)
 print("Graph Generated.")
 
 mat.title("Magnetic Flux Vs Distance")
 mat.xlabel(f"Distance (m)")
-mat.ylabel(f"Mangeitc Flux (T)")
+mat.ylabel(f"Magnetic Flux (T)")
 mat.show()
