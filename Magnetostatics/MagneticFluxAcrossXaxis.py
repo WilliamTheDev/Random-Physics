@@ -46,7 +46,7 @@ pointsAcrossXaxis = int(input())
 os.system('clear')
 print("Processing...")
 
-# Calcuations 
+# Calculations 
 magneticFlux = MagneticFluxDensity(turns, voltage, resistance, length)
 PointDensity(pointsAcrossXaxis, magneticFlux, length, OuterRadius)
 print("Graph Generated.")
