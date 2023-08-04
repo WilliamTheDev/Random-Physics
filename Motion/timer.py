@@ -33,7 +33,7 @@ for i in range(0, 10):
     resistance = (time/(1.1*(1*pow(10, -5))))
     x.append(i)
     y.append(time*1000)
-    stages.append([i+1, velocity, time, resistance])
+    stages.append([i+1, velocity, time*1000, resistance])
     intialVelocity = velocity
 
 print(tabulate(stages, headers=['Stage', 'Velocity (m/s)', 'Time (ms)', 'Resistance (ohms)']))
