@@ -1,4 +1,5 @@
 import matplotlib.pyplot as mat
+from tabulate import tabulate
 import math
 import os
 
@@ -18,16 +19,19 @@ def VelocityStages(coils: int, turns: int, mass: float, length: float,
     x = 0
     outputx = []
     outputy = []
+    stages = []
     while x < coils:
-        current = (voltage-coefficientVoltage*x)/resistance
+        current = (voltage-coefficientVoltage*x)/(resistance+(resistanceCo*x))
         force = MagneticForce(MagneticFluxDensity(turns, current, length), projectileLength, current)
         acceleration = force/mass
         velocity = math.sqrt((velocity*velocity)+2*acceleration*(length))
         outputy.append(velocity)
         outputx.append(x)
+        stages.append([x+1, current, velocity])
         x+=1
     mat.plot(outputx, outputy)
-
+    print(tabulate(stages, headers=['Stage', 'Ampre (A)', 'Velocity (m/s)']))
+    print(f'{round(velocity*3.6)}kph')
 
 # Interface
 os.system('clear')
