@@ -56,7 +56,7 @@ for x in range(0, 10):
     velocityout.append(velocity*eff)
     kenticEnergy = 1/2*projectileMass*pow(velocity,2)
     timeout.append(time*1000)
-    stages.append([x+1, round(current,2), round(ResistanceCo*x+coilResistance,2), round(velocity*eff,2), round(kenticEnergy, 2), round(time*1000,2), round(resistance)])
+    stages.append([x+1, round(current,2), round(resistanceCo*x+coilResistance,2), round(velocity*eff,2), round(kenticEnergy, 2), round(time*1000,2), round(resistance)])
     intialVelocity = velocity
 
 print(tabulate(stages, headers=['Stage', 'Current (Amps)', 'CResistance (ohms)', 'Velocity (m/s)', 'Kentic Energy (J)', 'Time (ms)', 'TResistance (ohms)']))
