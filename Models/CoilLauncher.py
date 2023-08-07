@@ -28,7 +28,7 @@ voltageCo = 0.1
 # Launcher
 turns  = 160
 coilResistance = 0.2
-ResistanceCo = 0.03 + 0.009
+resistanceCo = 0.03 + 0.009
 coilLength = 0.05
 distance = 0.07
 coils = 10
@@ -45,7 +45,7 @@ timeout = []
 stages = []
 
 for x in range(0, 10):
-    current = (voltage-voltageCo*x)/(ResistanceCo*x+coilResistance)
+    current = (voltage-voltageCo*x)/(resistanceCo*x+coilResistance)
     density = MagneticFluxDensity(turns, coilLength, current)
     force = MagneticForce(density, projectileLength, current)
     accelation = Accelation(force, projectileMass)
